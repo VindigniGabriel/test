@@ -3,8 +3,8 @@ import moment from "moment";
 const state = {
     filters: {
         url: "",
-        dateOne: "",
-        dateTwo: "",
+        dateOne: "2007-01-01",
+        dateTwo: "2007-12-31",
         consultantsListSelected: []
     },
     consultansList: [],
@@ -27,13 +27,13 @@ const mutations = {
     },
     setDateOne(state, payload) {
         let filters = state.filters
-        filters.dateOne = moment(payload).format('YYYY-MM-DD')
+        filters.dateOne = moment(payload, "MM/YYYY").format('YYYY-MM-DD')
         state.filters = ""
         state.filters = filters
     },
     setDateTwo(state, payload) {
         let filters = state.filters
-        filters.dateTwo = moment(payload).endOf('month').format('YYYY-MM-DD')
+        filters.dateTwo = moment(payload, "MM/YYYY").endOf('month').format('YYYY-MM-DD')
         state.filters = ""
         state.filters = filters
     },
@@ -71,7 +71,6 @@ const actions = {
             }
         })
             .then(response => {
-                    console.log(response.data)
                     context.commit('setConsultansReport', response.data)
                 })
                     .catch(function (error) {

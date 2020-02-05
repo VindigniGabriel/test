@@ -1,19 +1,23 @@
 <template>
-<b-container>
+  <b-container>
     <b-row class="my-1">
       <b-col sm="3" class="d-none d-sm-block">
-        <label>Desde</label>
+        <b-badge>A partir de</b-badge>
       </b-col>
       <b-col sm="9">
-        <b-form-input type="month" size="sm" v-model="dateOne" min="2007-01" max="2007-12"></b-form-input>
+        <div class="form-row">
+          <date-picker v-model="dateOne" :config="options"></date-picker>
+        </div>
       </b-col>
     </b-row>
     <b-row class="my-1">
       <b-col sm="3" class="d-none d-sm-block">
-        <label>a</label>
+        <b-badge>para</b-badge>
       </b-col>
       <b-col sm="9">
-        <b-form-input type="month" size="sm" v-model="dateTwo" min="2007-01" max="2007-12"></b-form-input>
+        <div class="form-row">
+          <date-picker v-model="dateTwo" :config="options"></date-picker>
+        </div>
       </b-col>
     </b-row>
   </b-container>
@@ -21,11 +25,24 @@
 
 <script>
 import { mapMutations } from "vuex";
+import "bootstrap/dist/css/bootstrap.css";
+import datePicker from "vue-bootstrap-datetimepicker";
+import "pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css";
+import moment from "moment";
 export default {
+  components: {
+    datePicker
+  },
   data() {
     return {
-      dateOne: "",
-      dateTwo: ""
+      dateOne: "01/2007",
+      dateTwo: "",
+      options: {
+        format: "MM/YYYY",
+        viewMode: "months",
+        minDate: "2007-01",
+        maxDate: "2007-12"
+      }
     };
   },
   methods: {
