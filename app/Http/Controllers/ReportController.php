@@ -28,18 +28,17 @@ class ReportController extends ApiController
                         $sb = ($user->salary !== null) ? $user->salary->brut_salario : 0;
                         $rl = $day->valor - $day->valor * $pr;
                         $cm = ($day->valor - ($day->valor * $pr)) * $pc;
-                        $lc = ($rl) - ($sb + $cm);
                         $month_rl += $rl;
                         $month_cm += $cm;
-                        $month_lc += $lc;
                     }
-
+                    $lc = ($month_rl) - ($sb + $month_cm);
+                    
                     $data = [
                         'Periodo' => "${km}/${ky}",
                         'Receita_Líquida' => $month_rl,
                         'Custo_Fixo' => $sb,
                         'Comissão' => $month_cm,
-                        'Lucro' => $month_lc
+                        'Lucro' => $lc
                     ];
                     array_push($data_consultans, $data);
                 }
