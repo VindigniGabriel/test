@@ -31,14 +31,14 @@ class ReportController extends ApiController
                         $month_rl += $rl;
                         $month_cm += $cm;
                     }
-                    $lc = ($month_rl) - ($sb + $month_cm);
+                    $month_lc = ($month_rl) - ($sb + $month_cm);
                     
                     $data = [
                         'Periodo' => "${km}/${ky}",
                         'Receita_Líquida' => $month_rl,
                         'Custo_Fixo' => $sb,
                         'Comissão' => $month_cm,
-                        'Lucro' => $lc
+                        'Lucro' => $month_lc
                     ];
                     array_push($data_consultans, $data);
                 }
