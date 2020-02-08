@@ -16,7 +16,7 @@ class ChartController extends ApiController
         $salaryAvg = 0;
         foreach ($request->consultans as $key => $identify) {
             $countConsultans++;
-            $user =  User::find($identify);
+            $user =  User::with('invoices','salary')->find($identify);
             if ($user->salary !== null) {
                 $salarySum += $user->salary->brut_salario;
                 $salaryAvg = $salarySum / $countConsultans;

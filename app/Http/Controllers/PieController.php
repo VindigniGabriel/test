@@ -13,7 +13,7 @@ class PieController extends ApiController
         $report = [];
         $month_rl = 0;
         foreach ($request->consultans as $key => $identify) {
-            $user =  User::find($identify);
+            $user =  User::with('invoices','salary')->find($identify);
 
             $filters = $this->filterInvoice($user, $request->dateOne, $request->dateTwo);
             $data_consultans = [];

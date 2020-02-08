@@ -14,7 +14,7 @@ class ReportController extends ApiController
         $data = [];
 
         foreach ($request->consultans as $key => $identify) {
-            $user =  User::find($identify);
+            $user =  User::with('invoices','salary')->find($identify);
             $filters = $this->filterInvoice($user, $request->dateOne, $request->dateTwo);
             $data_consultans = [];
             foreach ($filters as $ky => $year) {
