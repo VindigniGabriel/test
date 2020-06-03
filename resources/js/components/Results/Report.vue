@@ -9,16 +9,16 @@
     >
       <b-card-text>
         <b-table small responsive hover :items="report.data">
-          <template v-slot:cell(Receita_Líquida)="data">
+          <template v-slot:cell(Net_Revenue)="data">
             <b>{{ formatCurrency(data.value) }}</b>
           </template>
-          <template v-slot:cell(Custo_Fixo)="data">
+          <template v-slot:cell(Fixed_Cost)="data">
             <b>{{ formatCurrency(data.value) }}</b>
           </template>
-          <template v-slot:cell(Comissão)="data">
+          <template v-slot:cell(Commission)="data">
             <b>{{ formatCurrency(data.value) }}</b>
           </template>
-          <template v-slot:cell(Lucro)="data">
+          <template v-slot:cell(Profit)="data">
             <b class="text-info">{{ formatCurrency(data.value) }}</b>
           </template>
         </b-table>

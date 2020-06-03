@@ -9,33 +9,6 @@ import moment, { months } from "moment";
 import HorizontalBar from "../chart/Bar";
 import { mapGetters } from "vuex";
 
-moment.locale("pt-br");
-
-const numeral = require("numeral");
-
-numeral.register('locale', 'pt-br', {
-    delimiters: {
-        thousands: '.',
-        decimal: ','
-    },
-    abbreviations: {
-        thousand: 'mil',
-        million: 'milhões',
-        billion: 'b',
-        trillion: 't'
-    },
-    ordinal: function (number) {
-        return 'º';
-    },
-    currency: {
-        symbol: 'R$ '
-    }
-});
-
-numeral.locale('pt-br');
-
-numeral.defaultFormat('$0,0.00');
-
 export default {
   components: {
     HorizontalBar

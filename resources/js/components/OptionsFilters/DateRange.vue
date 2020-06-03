@@ -2,7 +2,7 @@
   <b-container>
     <b-row class="my-1">
       <b-col sm="3" class="d-none d-sm-block">
-        <b-badge>A partir de</b-badge>
+        <b-badge>From</b-badge>
       </b-col>
       <b-col sm="9">
         <div class="form-row">
@@ -12,7 +12,7 @@
     </b-row>
     <b-row class="my-1">
       <b-col sm="3" class="d-none d-sm-block">
-        <b-badge>para</b-badge>
+        <b-badge>To</b-badge>
       </b-col>
       <b-col sm="9">
         <div class="form-row">

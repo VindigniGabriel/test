@@ -4,9 +4,9 @@
       type="mirror"
       v-model="selected"
       :list="list"
-      lang="pt_BR"
-      placeholder-search-left="Consultor de pesquisa..."
-      placeholder-search-right="Consultor de pesquisa..."
+      lang="en_EN"
+      placeholder-search-left="List of consultants..."
+      placeholder-search-right="Selected consultants..."
     ></vue-select-sides>
   </div>
 </template>

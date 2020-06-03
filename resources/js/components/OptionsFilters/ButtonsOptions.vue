@@ -18,9 +18,9 @@ export default {
     return {
       buttonSelect: "",
       buttons: [
-        { caption: "Relatório", option: "report", icon: "table" },
-        { caption: "Gráfico", option: "chart", icon: "graph-up" },
-        { caption: "Pizza", option: "pie", icon: "pie-chart" }
+        { caption: "Report", option: "report", icon: "table" },
+        { caption: "Chart", option: "chart", icon: "graph-up" },
+        { caption: "Pie", option: "pie", icon: "pie-chart" }
       ]
     };
   },
